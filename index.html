@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основная страница</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Проверяем, есть ли параметр "visited" в URL
+            let params = new URLSearchParams(window.location.search);
+            if (!params.has("visited")) {
+                window.location.href = "warning.html"; // Перенаправление на предупреждение
+            }
+        });
+    </script>
+</head>
+<body>
+
+<div class="top">
+    <div class="container">
+    <h1>Добро пожаловать на мой сайт</h1>
+    <nav class="nav">
+        <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Сюжет</a></li>
+        <li><a href="#">Ранги</a></li>
+        <li><a href="#">Боевая карточка</a></li>
+        <li><a href="#">Дайсы и рп</a></li>
+        <li><a href="#">FAQ</a></li>
+        </ul>
+    </nav>
+    </div>
+</div>
+
+<main>
+    <section class="content">
+    <h2>Основной контент страницы</h2>
+    <p>Здесь может быть любой текст...</p>
+    </section>
+
+    
+</main>
+
+</body>
+</html>

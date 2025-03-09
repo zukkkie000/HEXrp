@@ -1,0 +1,72 @@
+/* Обнуляем отступы и поля */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  /* Стиль для body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+  /* Стиль для топа */
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    z-index: 1000; /* Обеспечиваем, чтобы топ был всегда поверх */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav li {
+    margin-left: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #f39c12; /* Цвет при наведении */
+}
+
+  /* Основной контент */
+main {
+    margin-top: 100px; /* Для того, чтобы контент не был скрыт за фиксированным топом */
+    padding: 20px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+  /* Стиль для секций */
+section {
+    margin-bottom: 30px;
+}
