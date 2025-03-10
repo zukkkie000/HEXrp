@@ -1,0 +1,357 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tektur", sans-serif;
+}
+
+/* Кнопка меню */
+.menu-button {
+    position: absolute;
+    top: 20px; /* Расстояние от верхнего края */
+    right: 20px; /* Расстояние от правого края */
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Мобильное меню */
+/* Начально скрываем меню */
+.mobile-menu {
+    visibility: hidden; /* Меню скрыто по умолчанию */
+    opacity: 0;
+    position: absolute;
+    top: 60px; /* Расположение меню под хедером */
+    right: 10px;
+    background: rgba(34, 34, 34, 0.95);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 1000;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+/* Когда класс 'open' добавлен, меню отображается */
+.mobile-menu.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
+
+.mobile-menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Шапка */
+.top {
+    position: fixed;
+    display: flex;
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+}
+
+/* Основное меню для ПК */
+.nav {
+    display: flex !important; /* Гарантированно показываем */
+    justify-content: center;
+    align-items: center;
+    background: #000000; /* Можно изменить цвет */
+    padding: 10px 20px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-left: 20px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s, background 0.3s;
+}
+
+.nav a:hover {
+    color: #90050a;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Скрываем десктопное меню на мобильных устройствах */
+@media (max-width: 768px) {
+    .nav {
+        display: none !important; /* Прячем десктопное меню */
+    }
+    .menu-button {
+        display: block; /* Показываем кнопку */
+    }
+    .mobile-menu {
+        display: block !important; /* Показываем мобильное меню */
+    }
+}
+
+/* Показываем основное меню на ПК и скрываем мобильное меню */
+@media (min-width: 769px) {
+    .nav {
+        display: flex !important; /* Показываем десктопное меню */
+    }
+    .mobile-menu {
+        display: none !important; /* Прячем мобильное меню */
+    }
+    .menu-button {
+        display: none !important; /* Прячем кнопку */
+    }
+}
+/* Логотип */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+    
+}
+
+.logo {
+    width: 60px; /* Размер логотипа */
+    height: 60px; /* Если нужно, можно увеличить или уменьшить */
+    margin-right: 10px; /* Немного пространства между логотипом и текстом */
+}
+
+.logo-title {
+    font-family: "Stalinist One", sans-serif !important;/* Это шрифт только для логотипа */
+    font-size: 34px;
+    color: #d92128;
+}
+
+/* Заголовок */
+h1 {
+    margin: 0;
+    font-size: 44px; /* Размер текста */
+    color: #d92128;;
+}
+
+
+.filter-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.pinimg.com/736x/07/e8/2c/07e82ce163b44657237700e5eb931b1a.jpg') cover; /* Заменить на свое изображение */
+    opacity: 1; /* Регулируй прозрачность */
+    pointer-events: none; /* Чтобы не мешало кликам */
+}
+
+
+.label {
+    border-color: #90050a;
+}
+
+.header-spacer {
+    height: 80px;
+}
+
+.content {
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 80px);
+    background-image: url('https://i.pinimg.com/originals/ce/5b/c5/ce5bc5207d050dd5c68c066a71c73917.gif');
+}
+
+.card {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    
+}
+
+  /* Заголовок форми, який буде схований у preview */
+#form-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+  /* Збільшуємо блок фото */
+.image-upload {
+    position: relative;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.image-upload label {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #90050a;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.image-upload input {
+    display: none;
+}
+
+  /* Збільшуємо область фото */
+    .image-preview {
+    width: 200px;
+    height: 200px;
+    background: #555;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1; /* Фотография на более низком уровне */
+}
+
+  /* Форма */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #90050a;
+}
+
+form input, form textarea {
+    background: #000000;
+    border: 1px solid #90050a;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    background: #90050a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: #90050a;
+}
+
+.extra-content {
+    margin-top: 15px;
+    min-height: 50px;
+}
+
+  /* Статистика */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+  /* Зменшені блоки статистики */
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px;
+    border: 2px solid #90050a;
+    background: rgba(255, 0, 0, 0.2);
+    width: calc(33.333% - 8px);
+    text-align: center;
+}
+
+.stat span {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.stat .mod {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stat .value {
+    font-size: 12px;
+}
+
+  /* Контроль статистики (кнопки) */
+.stat-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.stat-control .stat-btn {
+    padding: 2px 4px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.warning {
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}

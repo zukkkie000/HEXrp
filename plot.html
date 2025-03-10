@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <title>HEX|Сюжет</title>
+    <link rel="icon" href="pictures/hexred.png" type="image/png">
+</head>
+<body>
+
+    <div class="top">
+        <div class="logo-container">
+            <img src="pictures/hexred.png" alt="Logo" class="logo">
+        </div>
+        <h1 class="logo-title">HEXRP</h1>
+        <button class="menu-button">☰</button>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html?visited=true">Главная</a></li>
+                <li><a href="plot.html">Сюжет</a></li>
+                <li><a href="rangs.html">Ранги и классы</a></li>
+                <li><a href="fightcard.html">Боевая карточка</a></li>
+                <li><a href="diceandrp.html">Дайсы и рп</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav">
+            <ul>
+                <li><a href="index.html?visited=true">Главная</a></li>
+                <li><a href="plot.html">Сюжет</a></li>
+                <li><a href="rangs.html">Ранги и классы</a></li>
+                <li><a href="fightcard.html">Боевая карточка</a></li>
+                <li><a href="diceandrp.html">Дайсы и рп</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+            <div class="text-container">
+                <h2>Сюжет ролевой</h2>
+                <p>О мультивселенной нам мало что известно.. Каждая вселенная отличается своей историей развития, своими особенностями. Эта не исключение.</p>
+
+                <p>В далёком прошлом, хекстек всё же нашёл себе применение в этом мире, избежав катастрофических последствий для всех. Правда, своей ценой - магия в этом мире постепенно начала пропадать, ведь мир настраивался по другому принципу. И в нынешнее время, нынешние Пилтовер и Заун явно напоминают фантастическую кибер-утопию, в которой помимо великого прогресса технологий присутствует не менее опасная преступность, что хочет так или иначе присвоить себе сладкий кусок.</p>
+
+                <p>Пилтовер и Заун всё так же находяться в весьма недружественных отношениях. Во множества у них даже типы хекстека разные. Пилтошки придумали, как стабилизировать этот источник энергии как можно лучше, да и используют хекстек по большей части только для точных наук и для снабжения города электричеством. Правда, в этом городе не всё так радужно - хоть ситуация явно получше, чем в Зауне, но пробиться в какие-то более элитные места стало намного тяжелее. Город стал достаточно коррумпирован.</p>
+
+                <p>У Зауна дела обстоят похуже. Помимо того, что бароны буквально позабирали кусочки Зауна себе, так и другие банды, что не желают никому подчиняться, тоже сопротивляются этому. У них хекстек достаточно нестабильный, порой само оружие барахлит, но все к этому привыкли. И чаще всего, разрушительная сила хекстека направляется именно на уничтожение соперников..</p>
+
+                <p>Из-за чрезмерного использования хекстека, что само по себе является прямой угрозой человечеству, в этом мире все разделены по рангам, что отличается собственными плюшками и в особенности частоте использования хекстека в тех или иных целях.</p>
+
+                <p>Собственно, у каждого свой путь стать великим. Станешь ли ты легендой? Зависит от тебя, мой дорогой друг</p>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+        const menuButton = document.querySelector(".menu-button");
+        const mobileMenu = document.getElementById("mobileMenu");
+    
+        // Открытие/закрытие меню при клике на кнопку
+        menuButton.addEventListener("click", function (event) {
+            event.stopPropagation(); // Останавливаем распространение события
+            console.log("Меню открыто/закрыто");
+            mobileMenu.classList.toggle("open");  // Переключаем класс для открытия/закрытия меню
+        });
+    
+        // Закрытие меню при клике вне меню
+        document.addEventListener("click", function (event) {
+            // Проверяем, не был ли клик сделан в пределах меню или кнопки
+            if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                console.log("Клик вне меню, закрытие меню");
+                mobileMenu.classList.remove("open"); // Закрываем меню
+            }
+        });
+    });
+        </script>
+
+
+</body>
+</html>
