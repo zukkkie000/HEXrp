@@ -15,7 +15,7 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: white;
+    color: rgb(255, 0, 0);
     cursor: pointer;
 }
 
@@ -55,14 +55,14 @@
 }
 
 .mobile-menu ul li a {
-    color: white;
+    color: rgb(244, 22, 22);
     text-decoration: none;
     display: block;
     padding: 5px 10px;
 }
 
 .mobile-menu ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(30, 30, 30, 0.1);
 }
 
 /* Шапка */
@@ -133,6 +133,14 @@
     .mobile-menu {
         display: block !important; /* Показываем мобильное меню */
     }
+    .text-container {
+        width: 100vw; /* Растягиваем контейнер на всю ширину экрана */
+        max-width: none; /* Убираем возможные ограничения */
+        min-width: 100%; /* Гарантируем, что контейнер не будет меньше экрана */
+        padding: 20px; /* Добавляем внутренние отступы */
+        margin: 0; /* Убираем автоматическое центрирование, т.к. ширина уже 100% */
+        border-radius: 0; /* Убираем скругления, если не нужно */
+    }
 }
 
 /* Показываем основное меню на ПК и скрываем мобильное меню */
@@ -183,7 +191,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;  /* Страница будет как минимум высотой в 100% от окна */
-    background-image: url('https://i.pinimg.com/originals/af/e4/12/afe412fe0a915b080eb2aafcdeac66bd.gif');
+    background-image: url('https://i.pinimg.com/originals/21/f3/5e/21f35e59c8f287e9e1460e69702ccadb.gif');
 }
 
 /* Стиль для контейнера текста */
@@ -191,7 +199,7 @@ body {
     background-color: #000000;
     color: white;
     padding: 20px;
-    padding-top: 80px;  /* Добавляем отступ сверху, чтобы текст не перекрывался шапкой */
+/* Добавляем отступ сверху, чтобы текст не перекрывался шапкой */
     border-radius: 10px;
     width: 60%;  /* Ширина контейнера */
     margin: 20px auto;  /* Центрируем по горизонтали с отступом сверху и снизу */
@@ -203,14 +211,86 @@ body {
 .text-container h2 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #333;
+    color: #ffffff;
 }
 
 .text-container p {
-    font-size: 18px;
-    color: #555;
+    font-size: 15px;
+    color: #ffffff;
 }
 
 .header-spacer {
     height: 80px;
+}
+
+/*РАНГИ*/
+
+.rangesframe, .classesframe {
+    border: 2px solid #90050a;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #90050a;
+}
+
+.list {
+    padding: 15px;
+    color: #b33838;
+}
+
+.podklass {
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px;
+    color:#00ffcc ;
+}
+
+dl {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 5px;
+    color: #333;
+}
+
+dl dt {
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+dl dd {
+    font-size: 12px;
+    margin-left: 10px;
+    color:#6f6767;
+}
+
+h2 {
+    color: #90050a !important ;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #ff6c6c;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #b90707;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.razdel img {
+    max-width: 100%; /* Уменьшается вместе с родителем */
+    height: auto; /* Сохраняет пропорции */
+    display: block; /* Убираем лишние отступы */
+    margin: 0 auto; /* Центрируем */
+}
+
+.pdf-container {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 2px solid #ff0033; /* Цвет рамки */
+    border-radius: 10px;
+    overflow: hidden;
 }
