@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Stalinist+One&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <title>HEX|</title>
+    <link rel="icon" href="pictures/hexred.png" type="image/png">
+</head>
+<body>
+
+    <div class="top">
+        <div class="logo-container">
+            <img src="pictures/hexred.png" alt="Logo" class="logo">
+        </div>
+        <h1 class="logo-title">HEXRP</h1>
+        <button class="menu-button">☰</button>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html?visited=true">Главная</a></li>
+                <li><a href="plot.html">Сюжет</a></li>
+                <li><a href="fightcard.html">Боевая карточка</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+        
+        <div class="nav">
+            <ul>
+                <li><a href="index.html?visited=true">Главная</a></li>
+                <li><a href="plot.html">Сюжет</a></li>
+                <li><a href="fightcard.html">Боевая карточка</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-spacer"></div>
+
+            <div class="text-container">
+                <h2>Текстовый блок</h2>
+                <p>Это поле для текста, расположенное в центре страницы. По бокам можно добавить фон, который будет дополнять стиль страницы.</p>
+            </div>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const menuButton = document.querySelector(".menu-button");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    // Открытие/закрытие меню при клике на кнопку
+    menuButton.addEventListener("click", function (event) {
+        event.stopPropagation(); // Останавливаем распространение события
+        console.log("Меню открыто/закрыто");
+        mobileMenu.classList.toggle("open");  // Переключаем класс для открытия/закрытия меню
+    });
+
+    // Закрытие меню при клике вне меню
+    document.addEventListener("click", function (event) {
+        // Проверяем, не был ли клик сделан в пределах меню или кнопки
+        if (!mobileMenu.contains(event.target) && !menuButton.contains(event.target)) {
+            console.log("Клик вне меню, закрытие меню");
+            mobileMenu.classList.remove("open"); // Закрываем меню
+        }
+    });
+});
+    </script>
+
+</body>
+</html>

@@ -141,7 +141,103 @@
         margin: 0; /* Убираем автоматическое центрирование, т.к. ширина уже 100% */
         border-radius: 0; /* Убираем скругления, если не нужно */
     }
+/* Мобильная версия: блок админов теперь имеет вертикальное расположение */
+@media (max-width: 768px) {
+    .admins {
+        display: flex !important;  /* Убедимся, что флекс применяется */
+        flex-direction: column !important;  /* Выстраиваем блоки по вертикали */
+        align-items: center !important; /* Центрируем элементы */
+        width: 100% !important;  /* Задаём полную ширину */
+        padding: 0 10px !important; /* Добавляем отступы */
+        box-sizing: border-box !important;
+    }
+
+    /* Каждый блок админа теперь будет занимать 100% ширины в мобильной версии */
+    .admins > div {
+        width: 100% !important;  /* Каждый блок будет занимать всю ширину */
+        margin-bottom: 15px !important;  /* Добавляем отступ между блоками */
+        padding: 15px !important;
+        background: rgba(0, 0, 0, 0.9) !important;
+        border: 2px solid #90050a !important;
+        border-radius: 10px !important;
+        box-shadow: 0 0 10px #90050a !important;
+        text-align: center !important;
+    }
 }
+
+    /* Для элементов Ekko, Jinx, Jayce */
+    .ekko, .jinx, .jayce {
+        width: 100%; /* Каждый из этих блоков будет занимать 100% */
+        margin-bottom: 15px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Картинки также растягиваем на мобильной версии */
+    .image img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid #db060d;
+        object-fit: cover; /* Чтобы картинка правильно масштабировалась */
+    }
+    /* Мобильная версия: Заголовок и текст должны быть центрированы и растягиваться */
+    h2, p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dd-buttons {
+        flex-direction: column;  /* На мобильных устройствах кнопки будут в колонку */
+        gap: 15px;  /* Увеличим отступы */
+    }
+
+    .links-button {
+        width: 100%;  /* Кнопки будут занимать всю ширину */
+        min-width: 150px;  /* Минимальная ширина для кнопок */
+    }
+
+    .infoblok table, .infoblok tbody, .infoblok th, .infoblok td, .infoblok tr {
+        display: block;
+        width: 100%;
+        border-collapse: collapse;
+        border: none; /* Полностью убираем границы таблицы */
+    }
+
+    .infoblok thead {
+        display: none; /* Убираем заголовки */
+    }
+
+    .infoblok tr {
+        display: block;
+        border: none; /* Убираем все границы */
+        border-bottom: 1px solid #90050a; /* Оставляем только нижний бордер */
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .infoblok th {
+        display: none;
+    }
+
+    .infoblok td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 10px;
+        text-align: right;
+        border: none !important; /* Убираем все границы у td */
+    }
+
+    .infoblok td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #ff3b3b;
+        text-align: left;
+    }
+
+}
+
 
 /* Показываем основное меню на ПК и скрываем мобильное меню */
 @media (min-width: 769px) {
@@ -173,7 +269,7 @@
 h1 {
     margin: 0;
     font-size: 44px; /* Размер текста */
-    color: #d92128;;
+    color: #d92128;
 }
 
 .logo-title {
@@ -184,7 +280,7 @@ h1 {
 
 
 body {
-    background-color: #1e1e1e;
+    background-color: #000000;
     color: white;
     margin: 0;
     padding: 0;
@@ -255,7 +351,7 @@ dl {
 
 dl dt {
     font-weight: bold;
-    color: #00ffcc;
+    color: #90050a;
 }
 
 dl dd {
@@ -293,4 +389,221 @@ h4 {
     border: 2px solid #ff0033; /* Цвет рамки */
     border-radius: 10px;
     overflow: hidden;
+}
+
+
+/* админблок */
+
+.descr {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 2px solid #90050a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #90050a;
+    margin: 20px;
+}
+
+.phrased {
+    font-family: monospace;
+    color: rgb(105, 105, 105) !important;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid gray;
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+/* Кнопки */
+.links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;  /* Центрируем кнопки по горизонтали */
+    align-items: center;  /* Центрируем кнопки по вертикали */
+}
+
+.links button {
+    background: linear-gradient(90deg, #cb0c12, #4f0104);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s;
+    
+}
+
+.links button:hover {
+    box-shadow: 0 0 10px #90050a;
+    transform: scale(1.1);
+}
+
+/* Оформление для кнопок */
+.dd-buttons {
+    display: flex;
+    flex-wrap: wrap;  /* Разрешаем перенос элементов на следующую строку */
+    gap: 10px;  /* Отступы между кнопками */
+    justify-content: center;  /* Центрируем кнопки по горизонтали */
+    align-items: center;  /* Центрируем кнопки по вертикали */
+}
+
+/* Кнопки */
+.links-button {
+    background: linear-gradient(90deg, #cb0c12, #4f0104);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: 0.3s;
+    flex: 1 1 calc(33.333% - 10px);  /* Каждая кнопка занимает 1/3 ширины */
+    max-width: calc(33.333% - 10px);  /* Ограничиваем максимальную ширину */
+}
+
+/* Эффект при наведении */
+.links-button:hover {
+    box-shadow: 0 0 10px #90050a;
+    transform: scale(1.1);
+}
+
+/* Блок админов */
+.admins {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.admins > div {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    margin: 20px;
+    border: 2px solid #90050a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #90050a;
+    text-align: center;
+    width: 30%;
+}
+
+.image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #e20c13;
+}
+
+/* Инфоблок */
+.infoblok {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 2px solid #90050a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #90050a;
+    margin: 20px;
+}
+
+.infoblok ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.infoblok ul li {
+    background: #000000;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Wiki */
+.infoblok dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.infoblok dt a {
+    text-decoration: none;
+    color: #90050a;
+    font-weight: bold;
+}
+
+.infoblok dt a:hover {
+    text-shadow: 0 0 5px #90050a;
+}
+
+/* Новости */
+.news {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border: 2px solid #90050a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #90050a;
+    margin: 20px;
+    text-align: center;
+}
+
+
+
+
+.infoblok {
+    width: 100%; /* Растягивает инфоблок на всю доступную ширину */
+    max-width: 1000px; /* Опционально: ограничивает слишком большую ширину */
+    margin: auto; /* Центрирует блок */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.95); /* Тёмный фон с небольшой прозрачностью */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); /* Лёгкое свечение */
+}
+
+.qinfo {
+    width: 100%; /* Растягиваем .qinfo на всю ширину инфоблока */
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.9); /* Ещё темнее для контраста */
+}
+
+.qinfo dt {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff3b3b;
+    text-transform: uppercase;
+    margin-top: 15px;
+    border-bottom: 1px solid #90050a;
+    padding-bottom: 5px;
+}
+
+.qinfo dd {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0 20px 10px;
+    color: #bbb;
+}
+
+.qinfo dd::before {
+    content: "» ";
+    color: #ff3b3b;
+    font-weight: bold;
+}
+
+.infoblok table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем двойные границы */
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #90050a; /* Красная рамка вокруг всей таблицы */
+}
+
+.infoblok th, .infoblok td {
+    padding: 10px;
+    border: 1px solid #90050a; /* Границы ячеек */
+    text-align: left;
+    color: #bbb;
+}
+
+.infoblok th {
+    background: #90050a;
+    color: white;
+    text-transform: uppercase;
 }
